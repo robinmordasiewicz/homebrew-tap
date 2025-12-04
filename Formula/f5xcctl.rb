@@ -5,13 +5,13 @@
 class F5xcctl < Formula
   desc "kubectl-style CLI for F5 Distributed Cloud"
   homepage "https://github.com/robinmordasiewicz/f5xcctl"
-  version "0.1.4"
+  version "0.1.5"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.4/f5xcctl_0.1.4_darwin_amd64.tar.gz"
-      sha256 "ccc3587d9a62ab610b529aea27c5042fa59ead2e081f28849dc3519cd463544a"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.5/f5xcctl_0.1.5_darwin_amd64.tar.gz"
+      sha256 "2cb503dd4df189120635704bde2ff52c918d5b60f148286fc2cd10f3b6ac4d5f"
 
       def install
         bin.install "f5xcctl"
@@ -21,8 +21,8 @@ class F5xcctl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.4/f5xcctl_0.1.4_darwin_arm64.tar.gz"
-      sha256 "9b41df010d2e64d1cc8d46fa2328fd8096cb98d36b4836e2a051895afa2ec12f"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.5/f5xcctl_0.1.5_darwin_arm64.tar.gz"
+      sha256 "e3911383690ce429cac096b6ac1f26929be310c154cd5cb8471b3cd135f3f0cf"
 
       def install
         bin.install "f5xcctl"
@@ -35,8 +35,8 @@ class F5xcctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.4/f5xcctl_0.1.4_linux_amd64.tar.gz"
-      sha256 "3bb1223bdd95bcdc6af579fd7c327a5757676c3b05546e8dd4a663f6f7cbe1ed"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.5/f5xcctl_0.1.5_linux_amd64.tar.gz"
+      sha256 "dbce38b18956619be245a69fdbb5a5a81a4553433360fe9d26f4fd1f2366dbb8"
       def install
         bin.install "f5xcctl"
         bash_completion.install "completions/f5xcctl.bash" => "f5xcctl"
@@ -45,8 +45,8 @@ class F5xcctl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.4/f5xcctl_0.1.4_linux_arm64.tar.gz"
-      sha256 "a798285cbe528dfc4be181cb2688e8a531fe4ee92ec9b4b5bc08ed06c0d2d61c"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.5/f5xcctl_0.1.5_linux_arm64.tar.gz"
+      sha256 "6726051075c475907cac71e2310bbbb0b25206ab866489929ccfce51a7962d84"
       def install
         bin.install "f5xcctl"
         bash_completion.install "completions/f5xcctl.bash" => "f5xcctl"
@@ -54,6 +54,22 @@ class F5xcctl < Formula
         fish_completion.install "completions/f5xcctl.fish"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Shell completions have been installed.
+
+      For zsh, ensure compinit is enabled in ~/.zshrc:
+        autoload -Uz compinit && compinit
+
+      For bash, add to ~/.bashrc:
+        source $(brew --prefix)/etc/bash_completion.d/f5xcctl
+
+      Get started:
+        f5xcctl configure    # Set up API credentials
+        f5xcctl get --help   # List available resources
+    EOS
   end
 
   test do
