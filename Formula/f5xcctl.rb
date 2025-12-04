@@ -5,13 +5,13 @@
 class F5xcctl < Formula
   desc "kubectl-style CLI for F5 Distributed Cloud"
   homepage "https://github.com/robinmordasiewicz/f5xcctl"
-  version "0.1.2"
+  version "0.1.3"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.2/f5xcctl_0.1.2_darwin_amd64.tar.gz"
-      sha256 "8f767894cd0337496f3f4fd0c3b4aadfba947a8b50abde72360293bc7273f144"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.3/f5xcctl_0.1.3_darwin_amd64.tar.gz"
+      sha256 "d9b49319846950da33bc41a83ae88589ecd30dbd074b4259047c02fc8dd85bb5"
 
       def install
         bin.install "f5xcctl"
@@ -21,8 +21,8 @@ class F5xcctl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.2/f5xcctl_0.1.2_darwin_arm64.tar.gz"
-      sha256 "52251b0dde78f50500bc78489204d235fe6535be4774241ae18b14f200c3275b"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.3/f5xcctl_0.1.3_darwin_arm64.tar.gz"
+      sha256 "e5244b21738b95785aa282a82aa37c1ef20ea04af559ee50868ca38b3fbdb697"
 
       def install
         bin.install "f5xcctl"
@@ -35,8 +35,8 @@ class F5xcctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.2/f5xcctl_0.1.2_linux_amd64.tar.gz"
-      sha256 "5f0fe89cd151dc7cec3260e881163ceb8c204dd39e48bcf63c6bb6f18205d598"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.3/f5xcctl_0.1.3_linux_amd64.tar.gz"
+      sha256 "ad700b29b6541c96062dbc441920bc3b36106dbc42f4f6b6c29dc141ebaf4604"
       def install
         bin.install "f5xcctl"
         bash_completion.install "completions/f5xcctl.bash" => "f5xcctl"
@@ -45,8 +45,8 @@ class F5xcctl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.2/f5xcctl_0.1.2_linux_arm64.tar.gz"
-      sha256 "0bd4894eb852430385978900d243d88483a7e4b5f4ef482384bc431de5672df9"
+      url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v0.1.3/f5xcctl_0.1.3_linux_arm64.tar.gz"
+      sha256 "06d0d39837219fa5f5cdabdd97849588d0db5903567fcfdbbd52c6f3e3e6394a"
       def install
         bin.install "f5xcctl"
         bash_completion.install "completions/f5xcctl.bash" => "f5xcctl"
