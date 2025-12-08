@@ -5,21 +5,21 @@
 class Vesctl < Formula
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://github.com/robinmordasiewicz/vesctl"
-  version "1.3.0"
+  version "2.0.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v1.3.0/vesctl_1.3.0_darwin_amd64.tar.gz"
-      sha256 "24770287cbc13d33a65961d8b7a2af0968dbead1b50328419a6528bc960271d5"
+      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v2.0.0/vesctl_2.0.0_darwin_amd64.tar.gz"
+      sha256 "bdb66920c169d4410b5c3c2748e53b968bb4e3d4b7035acace6c8b413aef034a"
 
       def install
         bin.install "vesctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v1.3.0/vesctl_1.3.0_darwin_arm64.tar.gz"
-      sha256 "0e5a806effcff2ccd395a4273abcdb93a41b928efff064bf3afe71fd28137d3a"
+      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v2.0.0/vesctl_2.0.0_darwin_arm64.tar.gz"
+      sha256 "d24816dfd9a656d6e4762748caa90b43e8a0a042adecbcbcc19b937b5fb39e65"
 
       def install
         bin.install "vesctl"
@@ -29,15 +29,15 @@ class Vesctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v1.3.0/vesctl_1.3.0_linux_amd64.tar.gz"
-      sha256 "25de8201f35467316f454c383dea32620987670b19b054e3986a5d72e5fcea66"
+      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v2.0.0/vesctl_2.0.0_linux_amd64.tar.gz"
+      sha256 "e4cbfc3f5542f04ef51a11f67e2ec75c2579a3bec82761a95cb04d038ccee69a"
       def install
         bin.install "vesctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v1.3.0/vesctl_1.3.0_linux_arm64.tar.gz"
-      sha256 "854d22da0628c470dbf8afce98cded40d5e89d29e03d5c51ed7a22ae95ec2473"
+      url "https://github.com/robinmordasiewicz/vesctl/releases/download/v2.0.0/vesctl_2.0.0_linux_arm64.tar.gz"
+      sha256 "aa4bcce5586f1f15a37b8846698dbb1f85b73f3627d486829d61519226feaeb7"
       def install
         bin.install "vesctl"
       end
