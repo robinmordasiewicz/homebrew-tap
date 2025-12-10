@@ -3,7 +3,7 @@ cask "vesctl" do
   name "vesctl"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/vesctl"
-  version "4.12.1"
+  version "4.13.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,23 +14,31 @@ cask "vesctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "ef4b56facdf74f87db1ab264191c08b95e6c0eaed2cba27f7fbb3682745293b8"
+      sha256 "e261683ebaefc7161b929969d62b69bc7402cd0c77884f56bb6c456de9820d2b"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "c1299be3c123f5772d872464acacce8ce76d1f0d1107d25f28b5abbd0b4da634"
+      sha256 "9b02036caea256ce748c466c9f49fb046fb54a7c856846d324ea09275d6a4635"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_amd64.tar.gz"
-      sha256 "3b46dfcf741b8c86d0144c33ba21a1e80d6a0294f2d4e4d8f9cb61d9cf683d62"
+      sha256 "a404c5e687bcf9fd79dedf8242de957c09b24638e1cdb1a3909280cce4d58dec"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_arm64.tar.gz"
-      sha256 "64d828683415c79d66ab6d287537cb1b45b4a04892a34ef9731e08f497ce5822"
+      sha256 "a1711f267071c07035e11185fcfc51b7552e0ca50dd693fcded938133a692407"
     end
+  end
+
+  caveats do
+    "vesctl is not signed with an Apple Developer ID."
+    "If macOS shows "vesctl Not Opened" or blocks the app, run:"
+    "  xattr -d com.apple.quarantine #{caskroom_path}/vesctl"
+    ""
+    "Or go to System Settings > Privacy & Security and click "Open Anyway"."
   end
 
   # No zap stanza required
