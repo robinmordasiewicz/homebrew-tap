@@ -3,7 +3,7 @@ cask "vesctl" do
   name "vesctl"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/vesctl"
-  version "4.15.10"
+  version "4.15.11"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "vesctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "ba18d10fd4159c187e8055591f6f736c3aaa6136263a17d06479f0fd3905d3b8"
+      sha256 "af41f3dfd838b04cb5947c343fafefbe75942f0f439e0b6370e3e3b37528de21"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "d0b3b088c4f2459b36631f502f48814f6757082fbec395ace6ae71c10d1b9782"
+      sha256 "ece2890e23216021bb47cbb74c561705ae3bfb18223ce25500a7c511a6b88fcf"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_amd64.tar.gz"
-      sha256 "07b74d79ea3bbc9987b2cb28fe306b4f7b594aafa4f4db27f348b67c8f40ab22"
+      sha256 "86bb44f3cdebbac7cb93c4ba7bd13df3020a2a599e99c9a531673435bb593bf5"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_arm64.tar.gz"
-      sha256 "bf977920e95cc7f5d90ca9f66e5cefbcd61aa8fcf4246238667283a2b8858555"
+      sha256 "ce1fe64fbba7d0409032a04538e9fb63257e6329f7c5a19b9ecb6ce3805bf720"
     end
   end
 
