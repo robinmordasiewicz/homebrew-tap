@@ -14,11 +14,11 @@ cask "vesctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "96b227847d9d8d7a062908bb7a1b995d437f0f1190746c1e25cbc8e3dd003494"
+      sha256 "5474b1fe20b81d20bf892222414ec47ff5bda9827ea871bda06100cd81b4a912"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "2c66a3db932dcda9d6693a00c581b394a25838b3e8de63d0bbc721e736d28ba3"
+      sha256 "3013e14989f96c2a8a1fc7e43127e511d554a4d63e58eeb46f430d39a5b8acb9"
     end
   end
 
