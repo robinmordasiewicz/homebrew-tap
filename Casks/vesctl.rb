@@ -3,7 +3,7 @@ cask "vesctl" do
   name "vesctl"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://github.com/robinmordasiewicz/vesctl"
-  version "4.11.11"
+  version "4.11.12"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,30 +14,27 @@ cask "vesctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "fb0fb915005abe4c213994b36cbf596a2575223d478baa960af6e21a0c6b851c"
+      sha256 "f658dbfab76e5f635764437eaec5a7f8804926e572139c055ccd74613c279a89"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "031cc2873cb15467596013c35f02a4c140864a812e651f19a7ea59f5551e001e"
+      sha256 "16d92c310203392984e744ee10c648861c67598f38d29dae611b78fbc982c4df"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_amd64.tar.gz"
-      sha256 "8b3c67fb4ce551000d9c6ac93fb02979720386272794fc44f41fc6f1f0be7db5"
+      sha256 "828be29d06e42d202ecc2ee2e60cd82f9e82422704c8a7268c4e1b5026d0b983"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_arm64.tar.gz"
-      sha256 "73693b397d443d0e8cd6a6bebef32d92f2388d9c9817bdefa9af4f7a5b6ac246"
+      sha256 "b0dbb98173016b1618bb4ff966a1f612e8a5dbbbc672309cd541bc4fe696b8a2"
     end
   end
 
   caveats do
-    "To get started with vesctl:"
-    "  1. Configure authentication: vesctl configure"
-    "  2. List namespaces: vesctl configuration list namespace"
-    "  3. Get help: vesctl --help"
+    "Run 'vesctl configure' to set up authentication, then 'vesctl --help' for usage."
   end
 
   # No zap stanza required
