@@ -10,18 +10,15 @@ cask "vesctl" do
   end
 
   binary "vesctl"
-  bash_completion "completions/vesctl.bash"
-  zsh_completion "completions/vesctl.zsh"
-  fish_completion "completions/vesctl.fish"
 
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "4045fc1f5b5ad7a791374dffd3338dbb750b441f6a0fd8af82458c1058afd2df"
+      sha256 "52750c441e25b9bacdb48ea0599f389888f01f2b5793ed9ac019711f22eb23c5"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "a2fb19b17a224baad0a4981f0510a84dcdd9b55964aed5d8917a3bec4f38dbbf"
+      sha256 "4286517d2bcd608ca12ad4efe350dddd50db21134abcffc2716522c068fb12e7"
     end
   end
 
