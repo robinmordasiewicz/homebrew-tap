@@ -3,7 +3,7 @@ cask "vesctl" do
   name "vesctl"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/vesctl"
-  version "4.19.2"
+  version "4.20.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,36 +17,38 @@ cask "vesctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "04e82da56dd0166d155456000f21782b1edb6e23bdf93a42a4695f53f014ee0d"
+      sha256 "9da7d83c0306b767f8c4b704fa24603c529d7d6ac635283c8357eece4bf102f0"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "d33fa3a9c976479431af6474a8b9bc817d9261a721817060146c0830381326cb"
+      sha256 "7fe8cfb15ca7855825380d8f89edb7a00e3d174f68942bf14bdf376a0ae9c7e9"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_amd64.tar.gz"
-      sha256 "15a8e9d7cc9c767ec632e61c9fec917cb716531d13914d791026e00550b2c479"
+      sha256 "88be4c129fcde5ad1e381453add2a64d19931e860f920f6e3a7f7ec7371d52d1"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/vesctl/releases/download/v#{version}/vesctl_#{version}_linux_arm64.tar.gz"
-      sha256 "ccbbb68e655e988226837fd96c5f768eb36b90eaf90c8fdc40564ed7d7f88fbf"
+      sha256 "e5b3667fd7e00ebcf6655a1d9adb46f704b6af904f579f2518a7a3150dcb11d7"
     end
   end
 
-  caveats <<~EOS
-    Shell completions have been installed for bash, zsh, and fish.
+  caveats do
+    "Shell completions have been installed for bash, zsh, and fish."
+    ""
+    "For setup instructions, see:"
+    "  https://robinmordasiewicz.github.io/vesctl/install/homebrew/#shell-completions"
+    ""
+    "Quick start:"
+    "  Zsh: Usually works automatically. Restart your terminal."
+    "  Bash: Run 'brew install bash-completion@2' first."
+    "  Fish: Works automatically."
+    ""
+    "Test with: vesctl [TAB]"
+  end
 
-    For setup instructions, see:
-      https://robinmordasiewicz.github.io/vesctl/install/homebrew/#shell-completions
-
-    Quick start:
-      Zsh: Usually works automatically. Restart your terminal.
-      Bash: Run 'brew install bash-completion@2' first.
-      Fish: Works automatically.
-
-    Test with: vesctl [TAB]
-  EOS
+  # No zap stanza required
 end
