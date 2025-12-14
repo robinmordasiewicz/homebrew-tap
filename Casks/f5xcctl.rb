@@ -17,11 +17,11 @@ cask "f5xcctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "1d68d48f7ef9be1ecdd4f2d9beb618085ce3614506db9ed77f534ced7536a53a"
+      sha256 "37b4df08f602f39ba946d9450f74e132a6e9b9cf2e991a3c9204ee1415d8eb14"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "74828db9f2abed3afa08c790103af85033fec6fff575def03b4f34e5f7cad723"
+      sha256 "169acac471bcd8aa959b5a743d9245bf83e60b80d725dd0d6f1e5f2aacc8db74"
     end
   end
 
@@ -36,19 +36,17 @@ cask "f5xcctl" do
     end
   end
 
-  caveats do
-    "Shell completions have been installed for bash, zsh, and fish."
-    ""
-    "For setup instructions, see:"
-    "  https://robinmordasiewicz.github.io/f5xcctl/install/homebrew/#shell-completions"
-    ""
-    "Quick start:"
-    "  Zsh: Usually works automatically. Restart your terminal."
-    "  Bash: Run 'brew install bash-completion@2' first."
-    "  Fish: Works automatically."
-    ""
-    "Test with: f5xcctl [TAB]"
-  end
+  caveats <<~EOS
+    Shell completions have been installed for bash, zsh, and fish.
 
-  # No zap stanza required
+    For setup instructions, see:
+      https://robinmordasiewicz.github.io/f5xcctl/install/homebrew/#shell-completions
+
+    Quick start:
+      Zsh: Usually works automatically. Restart your terminal.
+      Bash: Run 'brew install bash-completion@2' first.
+      Fish: Works automatically.
+
+    Test with: f5xcctl [TAB]
+  EOS
 end
