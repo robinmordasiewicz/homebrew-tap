@@ -3,7 +3,7 @@ cask "f5xcctl" do
   name "f5xcctl"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/f5xcctl"
-  version "4.32.0"
+  version "4.32.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,22 +17,22 @@ cask "f5xcctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "a17abffaf42650287bda73dda6af97bc8ed3bda58e0693f9572c91ca5558646e"
+      sha256 "c6156af1bac7bd8aef489471d874cb3ac7da5c1117aa1ea5d5aa3a0267f3125b"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "e5e6cead21ad18bbd6fd7f66eeea3641ec3e9ce24d1335bd1967938f7e285b1a"
+      sha256 "93f2b793226c5b43279e06ec1d8d5c47bba199d1b4d4a27f43f49b2750554a88"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_linux_amd64.tar.gz"
-      sha256 "02432c3c3407f39102a96622a64ef2ad2ecdc95794daefe0c98a9b801fb68dc4"
+      sha256 "0ab57a35c6b2bd2503e22fda6f876652d7c999fcf3eb1b7d6d31bda5bc3ce720"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_linux_arm64.tar.gz"
-      sha256 "0964f6ff6e0ae9bf827913af79797cf997546d275d9f110f87241b70a7ec0754"
+      sha256 "1e536f006f4e63f0a5f57ceb259bfa976a50cc53c596c224b7bd2d618c45c442"
     end
   end
 
