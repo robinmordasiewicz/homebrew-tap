@@ -3,7 +3,7 @@ cask "f5xcctl" do
   name "f5xcctl"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/f5xcctl"
-  version "5.3.0"
+  version "5.4.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,41 +17,38 @@ cask "f5xcctl" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "6a850b01c2c01856fdf2b08e9c48367720ed362634799491847d350572c083e0"
+      sha256 "53c2938e0022278b9c64a7134d46c2b7081944cf1d19dd8bbf1f608ce48e3e98"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "3a3fddc0cc8e7751958d116cc34788305d68b0cc62ec45ef0ad3dc68aa5a266e"
+      sha256 "82a7e4dcf5467d95213d1db14ed1a98db027ec8ebef3f2789263162de83de82a"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_linux_amd64.tar.gz"
-      sha256 "859375ddaee93cc06746d9a6adf9b56406988155dced419960e055cde2cbb4a5"
+      sha256 "4159b1e175c6de6435141515ecfe4b4f26fed2761a0c3683151bd40fa0fdc949"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xcctl/releases/download/v#{version}/f5xcctl_#{version}_linux_arm64.tar.gz"
-      sha256 "18c1f40361928aac45229d593f469e4b6d7cf1fd78fd6104906335ae3ab64f13"
+      sha256 "8b7e6df078ed8b0a274983a78361ddfefc3674257ee56bbc21187dbbe593b6cf"
     end
   end
 
-  # Clear zsh completion cache after install/upgrade
-  postflight do
-    system_command "/bin/rm", args: ["-f", "#{Dir.home}/.zcompdump", "#{Dir.home}/.zcompdump-#{Socket.gethostname}-*"]
+  caveats do
+    "Shell completions have been installed for bash, zsh, and fish."
+    ""
+    "For setup instructions, see:"
+    "  https://robinmordasiewicz.github.io/f5xcctl/install/homebrew/#shell-completions"
+    ""
+    "Quick start:"
+    "  Zsh: Usually works automatically. Restart your terminal."
+    "  Bash: Run 'brew install bash-completion@2' first."
+    "  Fish: Works automatically."
+    ""
+    "Test with: f5xcctl [TAB]"
   end
 
-  caveats <<~EOS
-    Shell completions have been installed for bash, zsh, and fish.
-
-    For setup instructions, see:
-      https://robinmordasiewicz.github.io/f5xcctl/install/homebrew/#shell-completions
-
-    Quick start:
-      Zsh: Usually works automatically. Restart your terminal.
-      Bash: Run 'brew install bash-completion@2' first.
-      Fish: Works automatically.
-
-    Test with: f5xcctl [TAB]
-  EOS
+  # No zap stanza required
 end
