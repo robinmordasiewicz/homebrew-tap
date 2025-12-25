@@ -17,11 +17,11 @@ cask "xcsh" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
-      sha256 "e61ee405b7b7b463d4008d60545cedc8a9af120677cf9a6c5a7c933c8930098e"
+      sha256 "dea366bb242ed48dd660d5098c513c3a464823de9f51f1bdad790dfac6dd2452"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
-      sha256 "f8baf6286135cc854b0d7341afb509bfb1116c074446f1c202f1314be3265c65"
+      sha256 "940085c9e8e7ecfba1723a0677568eba0869910af6bbb87c9047ddea97ea1c24"
     end
   end
 
@@ -36,19 +36,22 @@ cask "xcsh" do
     end
   end
 
-  caveats do
-    "Shell completions have been installed for bash, zsh, and fish."
-    ""
-    "For setup instructions, see:"
-    "  https://robinmordasiewicz.github.io/xcsh/install/homebrew/#shell-completions"
-    ""
-    "Quick start:"
-    "  Zsh: Usually works automatically. Restart your terminal."
-    "  Bash: Run 'brew install bash-completion@2' first."
-    "  Fish: Works automatically."
-    ""
-    "Test with: xcsh [TAB]"
+  # Clear zsh completion cache after install/upgrade
+  postflight do
+    system_command "/bin/rm", args: ["-f", "#{Dir.home}/.zcompdump", "#{Dir.home}/.zcompdump-#{Socket.gethostname}-*"]
   end
 
-  # No zap stanza required
+  caveats <<~EOS
+    Shell completions have been installed for bash, zsh, and fish.
+
+    For setup instructions, see:
+      https://robinmordasiewicz.github.io/xcsh/install/homebrew/#shell-completions
+
+    Quick start:
+      Zsh: Usually works automatically. Restart your terminal.
+      Bash: Run 'brew install bash-completion@2' first.
+      Fish: Works automatically.
+
+    Test with: xcsh [TAB]
+  EOS
 end
