@@ -3,7 +3,7 @@ cask "xcsh" do
   name "xcsh"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/xcsh"
-  version "5.35.0"
+  version "5.36.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,41 +17,38 @@ cask "xcsh" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
-      sha256 "4ae8ca92a332e986f41774523b63cb7ea672a75ed09c402afc8b1c43417b9774"
+      sha256 "412cef6d136209ed54cf3b2933c72edd5f298496b40e6a4a6204a0962105a725"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
-      sha256 "da5137a6c531398b25f1ad20f4354c85270578a16285b0a823625f4454d66d02"
+      sha256 "a42fecc6dbc07158e8a86433c5be43185cba92a5db7db6b45b2652f7dfdec8d5"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_linux_amd64.tar.gz"
-      sha256 "8d071974d47b702f44158ac8c6026e874c616c403b653c7be71aa623c0aaf396"
+      sha256 "429690715ed59b2b2c36854277015a0f2d462cfb502452f95842e2f3674b6c55"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_linux_arm64.tar.gz"
-      sha256 "43016aeaf5f555305f6ee7e0cfa6207fae7d9bce6c1c67a6fe2c360dae1717e6"
+      sha256 "fd308f56adf5e1e91f0b7203ae9fbb1556bc3c0e89a29a8e3c446133977ac23a"
     end
   end
 
-  # Clear zsh completion cache after install/upgrade
-  postflight do
-    system_command "/bin/rm", args: ["-f", "#{Dir.home}/.zcompdump", "#{Dir.home}/.zcompdump-#{Socket.gethostname}-*"]
+  caveats do
+    "Shell completions have been installed for bash, zsh, and fish."
+    ""
+    "For setup instructions, see:"
+    "  https://robinmordasiewicz.github.io/xcsh/install/homebrew/#shell-completions"
+    ""
+    "Quick start:"
+    "  Zsh: Usually works automatically. Restart your terminal."
+    "  Bash: Run 'brew install bash-completion@2' first."
+    "  Fish: Works automatically."
+    ""
+    "Test with: xcsh [TAB]"
   end
 
-  caveats <<~EOS
-    Shell completions have been installed for bash, zsh, and fish.
-
-    For setup instructions, see:
-      https://robinmordasiewicz.github.io/xcsh/install/homebrew/#shell-completions
-
-    Quick start:
-      Zsh: Usually works automatically. Restart your terminal.
-      Bash: Run 'brew install bash-completion@2' first.
-      Fish: Works automatically.
-
-    Test with: xcsh [TAB]
-  EOS
+  # No zap stanza required
 end
