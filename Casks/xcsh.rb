@@ -1,8 +1,8 @@
 cask "xcsh" do
   name "xcsh"
   desc "Command-line interface for F5 Distributed Cloud"
-  homepage "https://robinmordasiewicz.github.io/xcsh"
-  version "6.22.0"
+  homepage "https://robinmordasiewicz.github.io/f5xc-xcsh"
+  version "6.23.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -37,23 +37,23 @@ cask "xcsh" do
 
   on_macos do
     on_intel do
-      url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
-      sha256 "25fc75c593d13f37d915a93fabda4348119f98ddfe805bffbc6c5ee4bd0646bb"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
+      sha256 "a98945151642d1c7c5c00256e44aff83ab35e40bf46ab352fcf265676469ad6a"
     end
     on_arm do
-      url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
-      sha256 "0657370c1bdb6c87cd542dc82fe135ab1fc3db492a97929bc10fe5606d405c60"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
+      sha256 "35cf373202e669d6d317ed223356a3fd1f6e33f096c3e0f8293c67f978928eba"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_linux_amd64.tar.gz"
-      sha256 "bf899e2519fbe8f82ba11f64c6db9e94c7a76b7cfecfc2ef666f9ece372cbd41"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_linux_amd64.tar.gz"
+      sha256 "2c638c15d2e2c8654275e9dfe33a53060fee320cb4cdbf10bfb4ab53a910386c"
     end
     on_arm do
-      url "https://github.com/robinmordasiewicz/xcsh/releases/download/v#{version}/xcsh_#{version}_linux_arm64.tar.gz"
-      sha256 "70ee10400298315b5cbe14feee7ac9779d12e1b8b1ff9abc4a492ff638db7699"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_linux_arm64.tar.gz"
+      sha256 "1e55a5c50f4b62b22bf3342d69adade9b4cdf84da15bb5de9ab08869feef9482"
     end
   end
 
@@ -64,7 +64,7 @@ cask "xcsh" do
     You may need to restart your shell or source your shell config.
 
     For setup instructions, see:
-      https://robinmordasiewicz.github.io/xcsh/install/homebrew/
+      https://robinmordasiewicz.github.io/f5xc-xcsh/install/homebrew/
 
     Quick start:
       xcsh --help
