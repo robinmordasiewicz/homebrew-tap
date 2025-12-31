@@ -2,7 +2,7 @@ cask "xcsh" do
   name "xcsh"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/f5xc-xcsh"
-  version "v1.0.82-2512312116"
+  version "v1.0.82-2512312131"
 
   livecheck do
     skip "Auto-generated on release."
@@ -37,23 +37,23 @@ cask "xcsh" do
 
   on_macos do
     on_intel do
-      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
-      sha256 "f68bdae9233879613921e015a8352e62a8acd724dc6bc6684120d03d72ed708c"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
+      sha256 "8007a9a1e910185871678713550ac2ce6d5d68fe28f6d44f1b1893d2da4e7754"
     end
     on_arm do
-      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
-      sha256 "4a183820e436f0cb7615a99c05284892cd8ef2369f2c6c9ee8bbbae1f9a2b863"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
+      sha256 "f8189362347b7eec51001c2b131cade2a533e7415d795b0fb0cce3890486ed71"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_linux_amd64.tar.gz"
-      sha256 "edb2c9227cd39282cfa2ad36aa97ea8b612ae72413556b2a1a860354056e2a1e"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_linux_amd64.tar.gz"
+      sha256 "629df184b4d8aac21c84916cb9c25b9916374bd8a756f13b32045d24cedaf440"
     end
     on_arm do
-      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/v#{version}/xcsh_#{version}_linux_arm64.tar.gz"
-      sha256 "50730a0cbc7b77018ad6155e5ca5c38d4586d8a7640b9bd96fbadf06492e93e3"
+      url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_linux_arm64.tar.gz"
+      sha256 "17ec9d460cb3bbd5bcfe62d7e49d299cd29d4318f03857d813151ae13e7de804"
     end
   end
 
