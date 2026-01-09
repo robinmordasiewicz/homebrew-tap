@@ -2,7 +2,7 @@ cask "xcsh" do
   name "xcsh"
   desc "Command-line interface for F5 Distributed Cloud"
   homepage "https://robinmordasiewicz.github.io/f5xc-xcsh"
-  version "v2.0.21-2601091916"
+  version "v2.0.21-2601091926"
 
   livecheck do
     skip "Auto-generated on release."
@@ -38,22 +38,22 @@ cask "xcsh" do
   on_macos do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_darwin_amd64.tar.gz"
-      sha256 "65870093c47ae2d489c9c5401bf3fda5dacbc7d5598f91f38c436c2082458acb"
+      sha256 "9dc2685fc2b0e827869ac4f44674b8f214dd7c7fb34f1d5204814c9721f179e2"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_darwin_arm64.tar.gz"
-      sha256 "c9bef20d0c3ef6b5b419fce893496fa24ee692dd821013ea37e018f3cc68e4e6"
+      sha256 "599c40489e70dca3c985c19297ad473ef6e4aca831d320a88c34189a3962850d"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_linux_amd64.tar.gz"
-      sha256 "ec21ccd3c8fd701f15a4e3ab54c37b00776f65158aabb3310d127a9323ce5109"
+      sha256 "7a8f15e702a2b0eb63051552436aa40af8fa5e2624bf013c1624da5df4c48af4"
     end
     on_arm do
       url "https://github.com/robinmordasiewicz/f5xc-xcsh/releases/download/#{version}/xcsh_#{version}_linux_arm64.tar.gz"
-      sha256 "4eaf0521ea322dbf8da5634e00ccfaeb5a9b9ed10176ae39d8916db730503163"
+      sha256 "92b6ff43b479d7af8e04c3b5c0a748872f25d5e16755e45498555a135084ae11"
     end
   end
 
